@@ -1000,3 +1000,392 @@ h1, h2, h3, h4 {
         transform: translateX(0);
     }
 }
+
+/* ==========================================================================
+   HERO CALLOUT/ALERT
+   ========================================================================== */
+.hero-cta-alert {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background-color: rgba(198, 167, 94, 0.1);
+    border: 1px dashed var(--gold);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-teal);
+    animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+    opacity: 0;
+}
+
+.alert-emoji {
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   PAINS SECTION (SESSÃO 2)
+   ========================================================================== */
+.pains-section {
+    padding: 100px 0;
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.pains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.pain-item {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius-card);
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    border: 1px solid rgba(198, 167, 94, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.pain-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(198, 167, 94, 0.2);
+}
+
+.pain-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.pain-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(198, 167, 94, 0.1);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.pain-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pains-footer {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.pains-footer-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   CASES SECTION (SESSÃO 4)
+   ========================================================================== */
+.cases-section {
+    padding: 100px 0;
+    background-color: var(--white);
+    border-top: 1px solid rgba(198, 167, 94, 0.1);
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 32px;
+}
+
+@media (max-width: 991px) {
+    .cases-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.case-card {
+    background-color: var(--bg-primary);
+    border-radius: var(--border-radius-card);
+    padding: 40px;
+    border: 1px solid rgba(198, 167, 94, 0.1);
+    position: relative;
+    transition: var(--transition-smooth);
+    overflow: hidden;
+}
+
+.case-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--gold);
+}
+
+.case-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.case-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: rgba(198, 167, 94, 0.1);
+    color: var(--gold-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.case-title {
+    font-size: 1.8rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--text-teal);
+    margin-bottom: 8px;
+}
+
+.case-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================================================
+   CATALOG SECTION & CAROUSEL (SESSÃO 5)
+   ========================================================================== */
+.catalog-section {
+    padding: 100px 0;
+    background-color: var(--bg-primary);
+}
+
+.catalog-carousel-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 50px;
+}
+
+@media (max-width: 575px) {
+    .catalog-carousel-container {
+        padding: 0 10px;
+    }
+}
+
+/* Phone Mockup Frame */
+.phone-mockup {
+    width: 320px;
+    height: 640px;
+    background-color: #0b1116;
+    border-radius: 40px;
+    border: 12px solid #2d383f;
+    margin: 0 auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.phone-speaker {
+    width: 60px;
+    height: 4px;
+    background-color: #2d383f;
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.phone-screen {
+    width: 100%;
+    height: calc(100% - 30px);
+    margin-top: 15px;
+    background-color: #ece5dd;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.phone-home-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #2d383f;
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+/* WhatsApp Header Mockup */
+.whatsapp-header {
+    background-color: #075e54;
+    color: var(--white);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.wa-back {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+.wa-profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-image: url('assets/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.wa-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.wa-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.wa-status {
+    font-size: 0.65rem;
+    opacity: 0.8;
+}
+
+.wa-actions {
+    color: var(--white);
+    opacity: 0.9;
+}
+
+/* Carousel Inner Track */
+.carousel-container {
+    width: 100%;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #efeae2;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Carousel Navigation Buttons */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--white);
+    color: var(--text-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(31, 61, 61, 0.1);
+    z-index: 50;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(198, 167, 94, 0.1);
+}
+
+.carousel-control:hover {
+    background-color: var(--gold);
+    color: var(--white);
+    border-color: var(--gold);
+    box-shadow: 0 6px 16px rgba(198, 167, 94, 0.3);
+}
+
+.carousel-control.prev {
+    left: -10px;
+}
+
+.carousel-control.next {
+    right: -10px;
+}
+
+@media (max-width: 575px) {
+    .carousel-control {
+        width: 36px;
+        height: 36px;
+    }
+    .carousel-control.prev {
+        left: 5px;
+    }
+    .carousel-control.next {
+        right: 5px;
+    }
+}
+
+/* Carousel Indicators (Dots) */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(31, 61, 61, 0.15);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.carousel-dots .dot.active {
+    width: 24px;
+    border-radius: 4px;
+    background-color: var(--gold);
+}
