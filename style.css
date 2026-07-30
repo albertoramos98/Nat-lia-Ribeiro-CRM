@@ -971,18 +971,6 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
-.pains-footer {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.pains-footer-text {
-    font-size: 1.05rem;
-    font-weight: 500;
-    color: var(--gold-dark);
-    margin-bottom: 24px;
-}
-
 /* ==========================================================================
    CASES SECTION (SESSÃO 4)
    ========================================================================== */
