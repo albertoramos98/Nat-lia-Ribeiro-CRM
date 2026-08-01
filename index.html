@@ -354,48 +354,91 @@
         <!-- Contact Section -->
         <section id="contato" class="contact-section">
             <div class="container contact-container">
-                <div class="contact-image-wrapper">
-                    <img src="assets/contact-profile.jpg" alt="Natália Ribeiro" class="contact-img">
+                <!-- Left Column: Lead Capture Form -->
+                <div class="contact-form-wrapper">
+                    <span class="section-tag invert">Diagnóstico Gratuito</span>
+                    <h2 class="contact-title">Vamos organizar seu processo comercial?</h2>
+                    <p class="contact-subtitle">Preencha os dados abaixo para solicitar um Diagnóstico Express de 30 minutos sem compromisso.</p>
+                    
+                    <form id="lead-capture-form" class="lead-form">
+                        <div class="form-group">
+                            <label for="lead-name">Nome Completo</label>
+                            <input type="text" id="lead-name" name="name" required placeholder="Ex: Dra. Juliana Costa">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="lead-email">E-mail Profissional</label>
+                                <input type="email" id="lead-email" name="email" required placeholder="Ex: contato@suaclinica.com.br">
+                            </div>
+                            <div class="form-group">
+                                <label for="lead-whatsapp">WhatsApp</label>
+                                <input type="tel" id="lead-whatsapp" name="whatsapp" required placeholder="Ex: (11) 99999-9999">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="lead-company">Clínica / Consultório</label>
+                                <input type="text" id="lead-company" name="company" required placeholder="Ex: Clínica Bella Pelle">
+                            </div>
+                            <div class="form-group">
+                                <label for="lead-revenue">Faturamento Mensal</label>
+                                <select id="lead-revenue" name="revenue" required>
+                                    <option value="" disabled selected>Selecione uma faixa</option>
+                                    <option value="Até R$ 20k">Até R$ 20.000 / mês</option>
+                                    <option value="R$ 20k a R$ 50k">R$ 20.000 a R$ 50.000 / mês</option>
+                                    <option value="R$ 50k a R$ 100k">R$ 50.000 a R$ 100.000 / mês</option>
+                                    <option value="Acima de R$ 100k">Mais de R$ 100.000 / mês</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lead-challenge">Principal Gargalo Comercial</label>
+                            <select id="lead-challenge" name="challenge" required>
+                                <option value="" disabled selected>Selecione o maior desafio atual</option>
+                                <option value="Leads sem resposta">Contatos chegam, mas somem sem resposta</option>
+                                <option value="Falta de processo">Não existe um processo comercial claro de ponta a ponta</option>
+                                <option value="CRM abandonado/inexistente">Temos CRM implantado, mas ninguém usa direito</option>
+                                <option value="Desperdício de tráfego">Investimos em tráfego, mas a agenda continua vazia</option>
+                                <option value="Outros">Outro desafio / Não sei identificar</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit" id="btn-submit-lead">
+                            Quero meu Diagnóstico Express
+                        </button>
+                    </form>
                 </div>
                 
-                <div class="contact-content">
-                    <span class="section-tag invert">Organização Comercial</span>
-                    <h2 class="contact-title">Vamos organizar seu processo comercial?</h2>
-                    <p class="contact-subtitle">Fale comigo por aqui:</p>
+                <!-- Right Column: Image and Direct Links -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-image-container">
+                        <img src="assets/contact-profile.jpg" alt="Natália Ribeiro" class="contact-img">
+                    </div>
                     
-                    <div class="contact-links">
-                        <!-- WhatsApp -->
-                        <a href="https://wa.me/5534991922080" target="_blank" rel="noopener noreferrer" class="contact-btn whatsapp">
-                            <span class="contact-icon-wrapper">
-                                <img src="assets/whatsapp-icon.svg" alt="WhatsApp Icon" class="contact-icon">
-                            </span>
-                            <span>WhatsApp</span>
-                        </a>
-                        
-                        <!-- Instagram -->
-                        <a href="https://instagram.com/nataliaribeiiros" target="_blank" rel="noopener noreferrer" class="contact-btn instagram">
-                            <span class="contact-icon-wrapper">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
+                    <div class="contact-direct-links">
+                        <h3>Ou se preferir, fale comigo diretamente:</h3>
+                        <div class="direct-buttons">
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/5534991922080" target="_blank" rel="noopener noreferrer" class="direct-btn whatsapp">
+                                <img src="assets/whatsapp-icon.svg" alt="WhatsApp Icon" class="direct-icon">
+                                <span>WhatsApp</span>
+                            </a>
+                            
+                            <!-- Instagram -->
+                            <a href="https://instagram.com/nataliaribeiiros" target="_blank" rel="noopener noreferrer" class="direct-btn instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                                 </svg>
-                            </span>
-                            <span>Instagram</span>
-                        </a>
-                        
-                        <!-- Email -->
-                        <a href="mailto:nataliarsilveira@gmail.com" class="contact-btn email">
-                            <span class="contact-icon-wrapper">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                            </span>
-                            <span>E-mail</span>
-                        </a>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
                     </div>
-
+                    
                     <!-- Kommo Partnership -->
                     <div class="kommo-badge">
                         <a href="http://www.kommo.com" target="_blank" rel="noopener noreferrer" class="kommo-link">
