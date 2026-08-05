@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 
                 // Format whatsapp message link
-                const waBaseUrl = "https://wa.me/5534991922080";
+                const waBaseUrl = "https://wa.me/5581999222021";
                 const waMessage = `Olá Luiz Henrique, acabei de enviar meus dados no site para agendar o diagnóstico express:\n\n` + 
                                   `• Nome: ${name}\n` +
                                   `• Clínica/Consultório: ${company}\n` +
