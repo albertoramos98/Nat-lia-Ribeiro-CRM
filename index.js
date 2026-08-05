@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Redirect after 3.5 seconds
                 setTimeout(() => {
-                    window.open(waFormattedUrl, '_blank');
+                    window.location.href = waFormattedUrl;
                 }, 3500);
                 
             }, 1800);
@@ -205,19 +205,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const whatsappInput = document.getElementById('lead-whatsapp');
         if (whatsappInput) {
             whatsappInput.addEventListener('input', (e) => {
-                let value = e.target.value.replace(/\D/g, '');
-                if (value.length > 11) value = value.slice(0, 11);
-                
-                // Apply simple mask: (XX) XXXXX-XXXX or (XX) XXXX-XXXX
-                if (value.length > 10) {
-                    e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
-                } else if (value.length > 6) {
-                    e.target.value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`;
-                } else if (value.length > 2) {
-                    e.target.value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-                } else if (value.length > 0) {
-                    e.target.value = `(${value}`;
+                let input = e.target.value.replace(/\D/g, '');
+                let formatted = '';
+                if (input.length > 0) {
+                    formatted += '(' + input.substring(0, 2);
                 }
+                if (input.length > 2) {
+                    formatted += ') ' + input.substring(2, 7);
+                }
+                if (input.length > 7) {
+                    formatted += '-' + input.substring(7, 11);
+                }
+                e.target.value = formatted;
             });
         }
     }
