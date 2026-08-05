@@ -120,9 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Get form values
             const name = document.getElementById('lead-name').value.trim();
-            const email = document.getElementById('lead-email').value.trim();
             const whatsapp = document.getElementById('lead-whatsapp').value.trim();
             const company = document.getElementById('lead-company').value.trim();
+            const segment = document.getElementById('lead-segment').value;
             const revenue = document.getElementById('lead-revenue').value;
             const challenge = document.getElementById('lead-challenge').value;
             
@@ -133,9 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Create lead object
             const leadData = {
                 name,
-                email,
                 whatsapp,
                 company,
+                segment,
                 revenue,
                 challenge,
                 timestamp: new Date().toISOString()
@@ -176,16 +176,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                         <div class="redirect-notice">
                             <div class="spinner"></div>
-                            <span>Redirecionando para o WhatsApp da Natália em instantes...</span>
+                            <span>Redirecionando para o WhatsApp do Luiz Henrique em instantes...</span>
                         </div>
                     </div>
                 `;
                 
                 // Format whatsapp message link
                 const waBaseUrl = "https://wa.me/5534991922080";
-                const waMessage = `Olá Natália, acabei de enviar meus dados no site para agendar o diagnóstico express:\n\n` + 
+                const waMessage = `Olá Luiz Henrique, acabei de enviar meus dados no site para agendar o diagnóstico express:\n\n` + 
                                   `• Nome: ${name}\n` +
                                   `• Clínica/Consultório: ${company}\n` +
+                                  `• Micro-segmento: ${segment}\n` +
                                   `• WhatsApp: ${whatsapp}\n` +
                                   `• Faturamento: ${revenue}\n` +
                                   `• Maior gargalo: ${challenge}`;

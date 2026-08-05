@@ -2,23 +2,23 @@
    DESIGN SYSTEM & VARIABLES
    ========================================================================== */
 :root {
-    /* Color Palette - Pastel Premium (Refined with Canva Site colors) */
-    --bg-primary: #f8f5f2;       /* Creme/Alabastro suave - idêntico ao Canva */
-    --bg-secondary: #FFFFFF;     /* Branco puro para blocos e cards */
-    --bg-pastel-sage: #E8EFEA;    /* Verde sálvia pastel (estética, saúde, frescor) */
-    --bg-pastel-rose: #F6ECE8;    /* Rosa antigo/pêssego pastel (delicado, beleza) */
-    --bg-dark: #1f3d3d;          /* Verde ardósia escuro premium do Canva */
-    --text-dark: #2b2b2b;        /* Grafite escuro do Canva para melhor contraste */
-    --text-muted: #5e6b66;       /* Cinza sálvia suave */
-    --gold: #c6a75e;             /* Ouro champanhe oficial do Canva */
-    --gold-light: #e2cfa0;       /* Ouro claro do Canva para contornos e destaques */
-    --gold-dark: #a48753;        /* Dourado escuro para contraste */
+    /* Color Palette - Premium Minimalist Black & Silver */
+    --bg-primary: #0a0a0a;       /* Deep matte black */
+    --bg-secondary: #121212;     /* Sleek dark charcoal for cards and blocks */
+    --bg-pastel-sage: #1a1a1a;    /* Dark iron gray instead of green sálvia */
+    --bg-pastel-rose: #0f0f0f;    /* Alternating section gray instead of pink */
+    --bg-dark: #070707;          /* Absolute dark background for header/footer */
+    --text-dark: #f5f5f7;        /* Crisp silver-white for titles (high contrast) */
+    --text-muted: #a1a1a6;       /* Clean silver-gray for descriptions */
+    --gold: #c0c0c0;             /* Metallic silver / Chrome accent */
+    --gold-light: #e0e0e0;       /* High-light silver for borders and accents */
+    --gold-dark: #8e8e93;        /* Muted slate silver */
     --white: #ffffff;
-    --shadow-soft: 0 8px 24px rgba(31, 61, 61, 0.04);
-    --shadow-hover: 0 16px 36px rgba(31, 61, 61, 0.08);
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.8);
     
     /* Fonts */
-    --font-title: 'Playfair Display', serif;
+    --font-title: 'Outfit', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
     
     /* Transitions & Borders */
@@ -30,6 +30,9 @@
     /* Layout */
     --header-height: 90px;
     --header-scrolled-height: 75px;
+    
+    /* Silver Metallic Gradient */
+    --silver-metallic: linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #b0b0b5 100%);
 }
 
 /* ==========================================================================
@@ -149,15 +152,18 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary {
-    background-color: var(--text-dark);
-    color: var(--white);
-    border: 1px solid var(--text-dark);
+    background: var(--silver-metallic);
+    color: #0a0a0a;
+    border: 1px solid #ffffff;
+    font-weight: 600;
 }
 
 .btn-primary:hover {
-    background-color: var(--gold);
-    border-color: var(--gold);
-    color: var(--white);
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
 }
 
 /* ==========================================================================
@@ -169,18 +175,19 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background-color: rgba(248, 245, 242, 0.85);
+    background-color: rgba(10, 10, 10, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
     transition: var(--transition-smooth);
-    border-bottom: 1px solid rgba(198, 167, 94, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .header.scrolled {
     height: var(--header-scrolled-height);
-    background-color: rgba(248, 245, 242, 0.96);
+    background-color: rgba(10, 10, 10, 0.92);
     box-shadow: var(--shadow-soft);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .header-container {
@@ -195,15 +202,18 @@ h1, h2, h3, h4 {
 
 .logo {
     font-family: var(--font-title);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--gold);
-    letter-spacing: -0.12em;
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: var(--silver-metallic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.05em;
     transition: var(--transition-smooth);
 }
 
 .logo:hover {
     transform: scale(1.05);
+    opacity: 0.9;
 }
 
 .nav-list {
@@ -318,11 +328,11 @@ h1, h2, h3, h4 {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: #2b5745;
-    background-color: var(--bg-pastel-sage);
+    color: var(--gold-light);
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 50px;
     margin-bottom: 24px;
-    border: 1px solid rgba(43, 87, 69, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .hero-title {
@@ -413,7 +423,7 @@ h1, h2, h3, h4 {
     border-radius: var(--border-radius-card);
     transition: var(--transition-fast);
     border: 1px solid var(--gold-light);
-    border-top: 3px solid var(--bg-pastel-sage);
+    border-top: 3px solid var(--gold);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -615,7 +625,7 @@ h1, h2, h3, h4 {
 }
 
 .form-group select option {
-    background-color: #1f3d3d;
+    background-color: #121212;
     color: var(--white);
 }
 
@@ -627,9 +637,9 @@ h1, h2, h3, h4 {
 }
 
 .btn-submit {
-    background-color: var(--gold);
-    color: var(--white);
-    border: 1px solid var(--gold);
+    background: var(--silver-metallic);
+    color: #0a0a0a;
+    border: 1px solid #ffffff;
     padding: 16px 32px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -646,7 +656,7 @@ h1, h2, h3, h4 {
 .btn-submit:hover:not(:disabled) {
     background-color: var(--white);
     border-color: var(--white);
-    color: var(--bg-dark);
+    color: #000000;
 }
 
 .btn-submit:disabled {
@@ -675,7 +685,7 @@ h1, h2, h3, h4 {
 /* Success Card */
 .success-card {
     background-color: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(198, 167, 94, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--border-radius-card);
     padding: 40px;
     text-align: center;
@@ -690,7 +700,7 @@ h1, h2, h3, h4 {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background-color: rgba(198, 167, 94, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
     color: var(--gold);
     margin-bottom: 20px;
 }
@@ -1273,6 +1283,115 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
     line-height: 1.6;
     margin: 0;
+}
+
+/* ==========================================================================
+   VISUAL CASE CARDS & METRICS
+   ========================================================================== */
+.visual-case {
+    display: flex;
+    flex-direction: column;
+    padding: 24px !important;
+    background-color: var(--bg-secondary) !important;
+}
+
+.case-image-wrapper {
+    width: 100%;
+    height: 280px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #0d0d0d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.case-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition-smooth);
+}
+
+.case-card:hover .case-screenshot {
+    transform: scale(1.03);
+}
+
+.case-metrics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+}
+
+.case-metrics:last-of-type {
+    border-bottom: none;
+    margin-bottom: 12px;
+}
+
+.metric-label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.metric-value {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.metric-value.highlighting {
+    background: var(--silver-metallic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & CONTRAST FOR LIGHT SECTIONS/CARDS
+   ========================================================================== */
+.service-card .service-title {
+    color: #0a0a0a !important;
+}
+
+.service-card .service-desc {
+    color: #444444 !important;
+}
+
+.service-card:hover .service-icon {
+    color: #0a0a0a !important;
+}
+
+.faq-section {
+    background-color: var(--white);
+}
+
+.faq-section .section-title {
+    color: #0a0a0a !important;
+}
+
+.faq-section .section-subtitle {
+    color: #444444 !important;
+}
+
+.faq-section .section-tag {
+    color: var(--gold-dark) !important;
+}
+
+.faq-question {
+    color: #0a0a0a !important;
+}
+
+.faq-answer-content {
+    color: #444444 !important;
+}
+
+.faq-footer-text {
+    color: #0a0a0a !important;
 }
 
 
