@@ -873,6 +873,11 @@ h1, h2, h3, h4 {
     border-color: #E1306C;
 }
 
+.direct-btn.email:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: var(--gold);
+}
+
 /* Partner Badge */
 .kommo-badge {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
