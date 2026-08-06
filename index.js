@@ -148,6 +148,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     const existingLeads = JSON.parse(localStorage.getItem('leads') || '[]');
                     existingLeads.push(leadData);
                     localStorage.setItem('leads', JSON.stringify(existingLeads));
+                    
+                    // Track form submission metric
+                    if (typeof trackEvent === 'function') {
+                        trackEvent('form');
+                    }
                 } catch (err) {
                     console.error('Error saving lead to localStorage:', err);
                 }
@@ -220,6 +225,68 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    // ==========================================================================
+    // 6. METRICS AND EVENT TRACKING (ADMIN)
+    // ==========================================================================
+    const trackEvent = (eventType) => {
+        const today = new Date().toLocaleDateString('sv-SE'); // YYYY-MM-DD in local time
+        let stats = JSON.parse(localStorage.getItem('site_stats') || '{}');
+        
+        if (!stats[today]) {
+            stats[today] = {
+                views: 0,
+                unique_views: 0,
+                whatsapp_clicks: 0,
+                email_clicks: 0,
+                instagram_clicks: 0,
+                form_submissions: 0
+            };
+        }
+        
+        if (eventType === 'view') {
+            stats[today].views++;
+            if (!sessionStorage.getItem('visited_session')) {
+                sessionStorage.setItem('visited_session', 'true');
+                stats[today].unique_views++;
+            }
+        } else if (eventType === 'whatsapp') {
+            stats[today].whatsapp_clicks++;
+        } else if (eventType === 'email') {
+            stats[today].email_clicks++;
+        } else if (eventType === 'instagram') {
+            stats[today].instagram_clicks++;
+        } else if (eventType === 'form') {
+            stats[today].form_submissions++;
+        }
+        
+        localStorage.setItem('site_stats', JSON.stringify(stats));
+    };
+
+    // Track page view on load
+    trackEvent('view');
+
+    // Track clicks on direct contact buttons
+    const whatsappBtns = document.querySelectorAll('a[href*="wa.me"], a.whatsapp, .direct-btn.whatsapp');
+    whatsappBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            trackEvent('whatsapp');
+        });
+    });
+
+    const emailBtns = document.querySelectorAll('a[href^="mailto:"], a.email, .direct-btn.email');
+    emailBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            trackEvent('email');
+        });
+    });
+
+    const instagramBtns = document.querySelectorAll('a[href*="instagram.com"], a.instagram, .direct-btn.instagram');
+    instagramBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            trackEvent('instagram');
+        });
+    });
 
 });
 
